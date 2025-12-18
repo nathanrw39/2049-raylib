@@ -158,6 +158,9 @@ bool CanMove(int board[SIZE][SIZE]) {
             if (board[i][j] == 0) return true; // if board is empty
             if (i < SIZE - 1 && board[i][j] == board[i + 1][j]) return true; // merge down
             if (j < SIZE - 1 && board[i][j] == board[i][j + 1]) return true; // merge right
+            if (i > 0 && board[i][j] == board[i - 1][j]) return true; // merge up
+            if (j > 0 && board[i][j] == board[i][j - 1]) return true; // merge left
+
         }
     }
     return false;
